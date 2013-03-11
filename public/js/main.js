@@ -7,7 +7,8 @@ var AppRouter = Backbone.Router.extend({
         "wines/add"         : "addWine",
         "wines/:id"         : "wineDetails",
         "about"             : "about",
-		"time"				: "time"
+		"time"				: "time",
+		"time/add"			: "addTime"		
     },
 
     initialize: function () {
@@ -60,12 +61,20 @@ var AppRouter = Backbone.Router.extend({
     	}
     	$('#content').html(this.timeSummaryView.el);
     	this.headerView.selectMenuItem('time-menu');
-    }
+    },
     
+    addTime: function() {
+//    	if (!this.addTimeView) {
+//    		this.addTimeView = new AddTimeView();
+//    	}
+		var time = new Time();
+    	$('#content').html(new AddTimeView({model: time}).el);
+    	this.headerView.selectMenuItem('add-time-menu');
+    } 
 
 });
 
-utils.loadTemplate(['HomeView', 'HeaderView', 'WineView', 'WineListItemView', 'AboutView', 'TimeSummaryView'], function() {
+utils.loadTemplate(['HomeView', 'HeaderView', 'AddTimeView', 'AboutView', 'TimeSummaryView'], function() {
     app = new AppRouter();
     Backbone.history.start();
 });

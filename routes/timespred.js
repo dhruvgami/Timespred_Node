@@ -26,6 +26,22 @@ exports.summary = function(req, res) {
     });
 };
 
+exports.addTime = function(req, res) {
+    var time = req.body;
+    console.log('Adding time: ' + JSON.stringify(time));
+    db.collection('usertime', function(err, collection) {
+        collection.insert(time, {safe:true}, function(err, result) {
+            if (err) {
+                res.send({'error':'An error has occurred'});
+            } else {
+                console.log('Success: ' + JSON.stringify(result[0]));
+                res.send(result[0]);
+            }
+        });
+    });
+};
+
+
 exports.home = function(req, res) {
 	res.send("Home page");
 }

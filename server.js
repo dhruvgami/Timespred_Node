@@ -22,6 +22,8 @@ app.delete('/wines/:id', wine.deleteWine);
 
 app.get('/time', timespred.home);
 app.get('/time/summary', timespred.summary);
+app.post('/time', timespred.addTime);
+app.put('/time', timespred.addTime);
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log("Express server listening on port " + app.get('port'));

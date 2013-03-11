@@ -1,0 +1,132 @@
+<div class="row-fluid status-bar">
+    <div class="span12">
+        <div class="alert alert-success" style="display: none">
+            <b>Success!</b> Time saved successfully
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+
+    <form class="form-horizontal span12">
+
+        <fieldset>
+
+            <legend>Add Time Details</legend>
+            <br/>
+
+            <div class="row">
+                <div class="span8">
+                    <div class="control-group">
+                        <label for="username" class="control-label">Name:</label>
+						<!-- TODO: automate username selection once login is implemented -->
+                        <div class="controls">
+                            <input type="text" id="username" name="username" value="<%= username %>"/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+					<!-- TODO: add a control for date selection -->
+					<!-- TODO: handle Date properly for mongodb inserts. currently it inserts whatever text is given, won't be searchable in mongo -->
+                    <div class="control-group">
+                        <label for="date" class="control-label">Date:</label>
+
+                        <div class="controls">
+                            <input type="text" id="date" name="date" value="<%= date %>"/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="work" class="control-label">Work:</label>
+
+                        <div class="controls">
+                            <input type="text" id="work" name="work" value="<%= work %>"/>
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="family" class="control-label">Family:</label>
+
+                        <div class="controls">
+                            <input type="text" id="family" name="family" value="<%= family %>"/>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="recreation" class="control-label">Recreation:</label>
+
+                        <div class="controls">
+                            <input type="text" id="recreation" name="recreation" value="<%= recreation %>"/>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="mental" class="control-label">Mental:</label>
+
+                        <div class="controls">
+                            <input type="text" id="mental" name="mental" value="<%= mental %>"/>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="social" class="control-label">Social:</label>
+
+                        <div class="controls">
+                            <input type="text" id="social" name="social" value="<%= social %>"/>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="financial" class="control-label">Financial:</label>
+
+                        <div class="controls">
+                            <input type="text" id="financial" name="financial" value="<%= financial %>"/>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="spiritual" class="control-label">Spiritual:</label>
+
+                        <div class="controls">
+                            <input type="text" id="spiritual" name="spiritual" value="<%= spiritual %>"/>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="sleep" class="control-label">Sleep:</label>
+
+                        <div class="controls">
+                            <input type="text" id="sleep" name="sleep" value="<%= sleep %>"/>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="other" class="control-label">Other:</label>
+
+                        <div class="controls">
+                            <input type="text" id="other" name="other" value="<%= other %>"/>
+                        </div>
+                    </div>
+					<!-- TODO: Add a total/sum counter field to show it adds up to 24 -->
+                </div>
+
+                <div class="span4">
+                    <div class="well" style="width: 180px;text-align: center;width:50%;margin: 0px auto;">
+                        <p style="color:#999;">Enter the time breakdown of your day here.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </fieldset>
+
+        <div class="form-actions">
+            <a href="#" class="btn btn-primary save">Save</a>
+            <a href="#" class="btn delete">Cancel</a>
+        </div>
+
+    </form>
+
+</div>
+
